@@ -1,0 +1,21 @@
+{
+  "register": "Register",
+  "login": "Login",
+	"search": "Search",
+  "search_placeholder": "Search city or country...",
+ "username": "Username",
+  "username_placeholder": "Enter your username",
+  "email": "Email",
+  "email_placeholder": "Enter your email",
+  "password": "Password",
+  "password_placeholder": "Enter your password",
+  "create_account": "Create account",
+"register_success": "Account created successfully",
+"register_error": "There was an error while registering",
+"login": "Inicia sesión",
+"login_success": "Inicio de sesión correcto",
+"login_error": "Error al iniciar sesión",
+"or_login_with_google": "O inicia sesión con Google"
+
+
+}

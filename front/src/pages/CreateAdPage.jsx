@@ -1,0 +1,1 @@
+export default function CreateAdPage() { return <div>Crear anuncio</div>; }

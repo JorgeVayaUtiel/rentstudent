@@ -1,0 +1,461 @@
+/* ------------------ ESTRUCTURA GENERAL ------------------ */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px #0000001a;
+}
+
+main {
+  flex: 1;
+  padding-bottom: 60px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  background-color: #fff;
+  font-size: 0.9rem;
+  padding: 1rem;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-logo img {
+  width: 40px;
+  height: auto;
+  display: block;
+  vertical-align: middle;
+}
+
+.header-logo h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+}
+
+header nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* ------------------ SEARCH BOX ------------------ */
+
+.search-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.search-box {
+  display: inline-flex;
+  width: 60%;
+  max-width: 600px;
+}
+
+#autocomplete {
+  flex: 1;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border: 2px solid #007bff;
+  border-radius: 8px 0 0 8px;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+#autocomplete:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 6px 15px rgba(0, 86, 179, 0.4);
+}
+
+.search-button {
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+  .search-box {
+    width: 90%;
+  }
+}
+
+/* ------------------ MAP ------------------ */
+
+#map {
+  position: relative;
+  width: 90%;
+  height: calc(60vh - 100px);
+  background-image: url('/assets/students-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  margin: 2rem auto 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#map::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: inherit;
+  filter: blur(8px) brightness(0.7);
+  opacity: 0.6;
+  z-index: 1;
+}
+
+#map > div {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 600px) {
+  #map {
+    width: 95%;
+    height: 50vh;
+  }
+}
+
+/* ------------------ SLIDER ------------------ */
+.slider {
+  width: 85%;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slider h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  width: 100%;            /* Ocupar todo el ancho del .slider */
+  box-sizing: border-box; /* Asegura que no se desborde por padding */
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card p {
+  padding: 0.75rem;
+  text-align: center;
+}
+
+/* ------------------ HEADER RESPONSIVE ------------------ */
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ------------------ NAV + LANGUAGE SWITCHER ------------------ */
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+header nav a {
+  margin-left: 0;
+  padding: 0.5rem 0;
+  text-align: right;
+}
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+
+.language-switcher button {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0;
+}
+
+.language-switcher button:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  header nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 0.5rem;
+    position: absolute;
+    top: 60px;
+    right: 1rem;
+    background: white;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 5px;
+  }
+
+  header nav.open {
+    display: flex;
+  }
+
+  .language-switcher {
+    margin-left: 0;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+  }
+
+  header nav.open .language-switcher {
+    display: flex;
+  }
+
+  header nav a {
+    margin-left: 0;
+    padding: 0.5rem 0;
+    text-align: right;
+  }
+}
+
+/* Estilo para el contenedor del registro */
+.register-container {
+  width: 100%;
+  max-width: 500px;  /* ampliamos el límite a 500px */
+  margin: 50px auto;
+  padding: 30px 30px;  /* más espacio lateral */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Título */
+.register-container h2 {
+  text-align: center;
+  margin-bottom: 30px;  /* Más separación debajo del título */
+  font-size: 1.8rem;
+}
+
+/* Formulario */
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form label {
+  display: flex;
+  flex-direction: column;  /* Hace que texto e input estén alineados verticalmente */
+  margin-bottom: 20px;     /* Más separación entre campos */
+  font-weight: 500;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 12px;           /* Más padding interno del input */
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;  /* Asegura que padding no rompa el ancho */
+}
+
+.register-form button {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.register-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive para móvil */
+@media (max-width: 640px) {
+  .register-container {
+    margin: 20px;
+    padding: 20px;  /* Mantiene simetría también en móvil */
+  }
+}
+/* Layout principal */
+.dashboard-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Zona principal con sidebar + contenido */
+.dashboard-main {
+  display: flex;
+  flex: 1;
+  background-color: #f9f9f9;
+}
+
+/* Sidebar fijo en escritorio */
+.sidebar {
+  width: 220px;
+  background-color: #fff;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Elementos dentro del sidebar */
+.sidebar h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.sidebar a:hover {
+  color: #007bff;
+}
+
+/* Botón de logout */
+.logout-button {
+  background-color: transparent;
+  border: none;
+  color: #c00;
+  cursor: pointer;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.logout-button:hover {
+  text-decoration: underline;
+}
+
+/* Contenido principal del dashboard */
+main {
+  flex: 1;
+  padding: 30px;
+}
+
+/* ======= Responsive ======= */
+@media (max-width: 768px) {
+  .dashboard-main {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    box-shadow: none;
+    padding: 10px 15px;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .sidebar li {
+    margin: 8px 0;
+  }
+
+  main {
+    padding: 20px 15px;
+  }
+}

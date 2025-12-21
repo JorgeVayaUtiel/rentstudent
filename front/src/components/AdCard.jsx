@@ -1,0 +1,1 @@
+export default function AdCard() { return <div>Ad Card</div>; }

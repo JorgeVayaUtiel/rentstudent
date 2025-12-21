@@ -1,0 +1,1 @@
+export default function PrivacyPolicy() { return <div>Política de privacidad</div>; }

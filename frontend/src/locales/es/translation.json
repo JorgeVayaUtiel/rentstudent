@@ -1,0 +1,26 @@
+{
+  "register": "Regístrate",
+  "login": "Inicia sesión",
+  "search": "Buscar",
+  "search_placeholder": "Buscar ciudad o país...",
+"username": "Nombre de usuario",
+  "username_placeholder": "Introduce tu nombre de usuario",
+  "email": "Correo electrónico",
+  "email_placeholder": "Introduce tu correo",
+  "password": "Contraseña",
+  "password_placeholder": "Introduce tu contraseña",
+  "create_account": "Crear cuenta",
+"register_success": "Cuenta creada correctamente",
+"register_error": "Hubo un error al registrarse",
+
+"login_success": "Inicio de sesión correcto",
+"login_error": "Error al iniciar sesión",
+"or_login_with_google": "O inicia sesión con Google",
+  "hello_user": "Hola, {{name}}",
+  "logout": "Cerrar sesión"
+  
+  
+
+
+
+}

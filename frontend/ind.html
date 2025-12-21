@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentStudent</title>
+    <link rel="icon" href="/assets/logo_rent.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/index.css" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiSmgfpw0KOn1xMQ5Vb4phfDwzUKNcWgQ&libraries=places"></script>
+    <script type="module" src="/assets/index.js"></script>
+  </head>
+  <body>
+    <header>
+      <img src="/assets/logo_rent.png" alt="Logo" class="logo" />
+      <h1>RentStudent</h1>
+      <nav>
+        <a href="/registro">Regístrate</a>
+        <a href="/login">Inicia sesión</a>
+      </nav>
+    </header>
+    <main>
+      <div class="search-container">
+        <input id="autocomplete" type="text" placeholder="Buscar ciudad o país..." />
+      </div>
+      <div id="map"></div>
+      <section class="slider">
+        <h2>Últimos anuncios publicados</h2>
+        <div class="cards">
+          <div class="card"><img src="/assets/anuncio1.jpg"/><p>Madrid, España - 500€/mes</p></div>
+          <div class="card"><img src="/assets/anuncio2.jpg"/><p>Barcelona, España - 550€/mes</p></div>
+          <div class="card"><img src="/assets/anuncio3.jpg"/><p>Valencia, España - 450€/mes</p></div>
+          <div class="card"><img src="/assets/anuncio4.jpg"/><p>Sevilla, España - 470€/mes</p></div>
+        </div>
+      </section>
+    </main>
+    <footer>© 2025 RentStudent. Todos los derechos reservados.</footer>
+  </body>
+</html>

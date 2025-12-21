@@ -1,0 +1,1 @@
+export default function AdDetailPage() { return <div>Detalle anuncio</div>; }

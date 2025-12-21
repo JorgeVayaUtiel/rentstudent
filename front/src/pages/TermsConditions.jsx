@@ -1,0 +1,1 @@
+export default function TermsConditions() { return <div>Términos</div>; }

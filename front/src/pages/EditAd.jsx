@@ -1,0 +1,1 @@
+export default function EditAd() { return <div>Editar anuncio</div>; }
