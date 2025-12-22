@@ -7,3 +7,10 @@ vendor/
 uploads/
 logs/
 *.log
+.ssh/
+.cache/
+.composer/
+httpdocs/
+error_docs/
+.imunify_patch_id
+.myimunify_id
