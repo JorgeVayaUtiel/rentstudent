@@ -146,12 +146,12 @@ export default function Dashboard() {
     loadUserProfile();
   }, [loadUserProfile]);
 
-  const handlePropertyCreated = (newProperty) => {
+  const handlePropertyCreated = useCallback((newProperty) => {
     if (newProperty) {
       setProperties((prev) => [newProperty, ...prev]);
     }
     setActiveSection('my-properties');
-  };
+  }, []);
 
   const renderSection = useMemo(() => {
     if (!user) {
