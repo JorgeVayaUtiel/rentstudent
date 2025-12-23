@@ -3,8 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);       // menú móvil
+  const [userMenuOpen, setUserMenuOpen] = useState(false); // menú usuario
   const [user, setUser] = useState(null);
+
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
@@ -34,8 +36,9 @@ export default function Header() {
   }, [location.pathname]);
 
   const handleLogout = () => {
-    localStorage.removeItem('token'); // ✅ Elimina el JWT
+    localStorage.removeItem('token');
     setUser(null);
+    setUserMenuOpen(false);
     navigate('/');
   };
 
@@ -64,14 +67,41 @@ export default function Header() {
       {/* MENÚ DE NAVEGACIÓN */}
       <nav className={menuOpen ? 'open' : ''}>
         {user ? (
-          <>
-            <span>{t('hello_user', { name: user.name?.split(' ')[0] || 'Usuario' })}</span>
-            <button onClick={handleLogout}>{t('logout') || 'Cerrar sesión'}</button>
-          </>
+          <div className="user-menu">
+            <button
+              className="user-menu-btn"
+              onClick={() => setUserMenuOpen(!userMenuOpen)}
+            >
+              {t('hello_user', {
+                name: user.name?.split(' ')[0] || 'Usuario'
+              })} ▾
+            </button>
+
+            {userMenuOpen && (
+              <div className="user-dropdown">
+                <button
+                  onClick={() => {
+                    setUserMenuOpen(false);
+                    navigate('/dashboard');
+                  }}
+                >
+                  Dashboard
+                </button>
+
+                <button onClick={handleLogout}>
+                  {t('logout') || 'Cerrar sesión'}
+                </button>
+              </div>
+            )}
+          </div>
         ) : (
           <>
-            {location.pathname !== '/registro' && <a href="/registro">{t('register')}</a>}
-            {location.pathname !== '/login' && <a href="/login">{t('login')}</a>}
+            {location.pathname !== '/registro' && (
+              <a href="/registro">{t('register')}</a>
+            )}
+            {location.pathname !== '/login' && (
+              <a href="/login">{t('login')}</a>
+            )}
           </>
         )}
       </nav>

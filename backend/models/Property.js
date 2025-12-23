@@ -6,7 +6,15 @@ const Property = sequelize.define('Property', {
   userId: { type: DataTypes.UUID, allowNull: false },
   title: DataTypes.STRING,
   description: DataTypes.TEXT,
-  price: DataTypes.FLOAT
+  price: DataTypes.FLOAT,
+  lat: {
+    type: DataTypes.FLOAT,
+    allowNull: true
+  },
+  lng: {
+    type: DataTypes.FLOAT,
+    allowNull: true
+  }
 });
 
 module.exports = Property;

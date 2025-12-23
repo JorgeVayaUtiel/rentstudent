@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Sidebar from '../components/SideBar';
 import UserDashboardView from '../components/UserDashboardView';
+import PublishProperty from '../components/PublishProperty';
 import axios from 'axios';
 
 export default function Dashboard() {
@@ -52,9 +53,13 @@ useEffect(() => {
       <Header />
       <div className="dashboard-main">
         <Sidebar user={user} />
-        <main>
+        {/* <main>
           <UserDashboardView user={user} />
+        </main> */}
+        <main>
+          <PublishProperty />
         </main>
+
       </div>
       <Footer />
     </div>

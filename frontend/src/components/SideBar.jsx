@@ -21,13 +21,16 @@ export default function Sidebar({ user }) {
         {t('hello_user', { name: user.name?.split(' ')[0] || t('user') })}
       </h3>
       <ul>
-        <li><a href="/profile">{t('profile')}</a></li>
-        <li><a href="/my-properties">{t('my_properties')}</a></li>
-        <li><a href="/publish">{t('publish_property')}</a></li>
-        <li><a href="/favorites">{t('favorites')}</a></li>
-        <li><a href="/messages">{t('messages')}</a></li>
+        {/* <li><a href="/profile">{t('profile')}</a></li> */}
+        <li><a href="/publish">{t('Publicar anuncio')}</a></li>
+        <li><a href="/messages">{t('Mensajes')}</a></li>
+         <li><a href="/favorites">{t('Favoritos')}</a></li>
+        <li><a href="/my-properties">{t('Mis anuncios')}</a></li>
+        
+       
+        
       </ul>
-      <button className="logout-button" onClick={handleLogout}>
+      <button className="logout-btn" onClick={handleLogout}>
         {t('logout')}
       </button>
     </aside>

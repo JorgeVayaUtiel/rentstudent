@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { placeholder } = require('../controllers/propertyController');
+const { createProperty } = require('../controllers/propertyController');
 
-router.get('/', placeholder);
+router.post('/', createProperty);
+
 module.exports = router;
